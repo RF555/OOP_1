@@ -31,7 +31,7 @@ public class GroupAdmin implements Sender {
     public void register(Member obj) {
         if (!members.contains(obj)) {
             members.add(obj);
-            count ++;
+            count++;
         } else {
             System.out.println("Member is already registered");
         }
@@ -48,7 +48,7 @@ public class GroupAdmin implements Sender {
     public void unregister(Member obj) {
         if (members.contains(obj)) {
             members.remove(obj);
-            count --;
+            count--;
         } else {
             System.out.println("Member is not registered in this GroupAdmin");
         }
@@ -129,8 +129,8 @@ public class GroupAdmin implements Sender {
         return USB;
     }
 
-    public Member getLast(){
-        if(!this.members.isEmpty()){
+    public Member getLast() {
+        if (!this.members.isEmpty()) {
             return this.members.get(count - 1);
         } else {
             return null;

@@ -18,10 +18,6 @@ public class Tests {
         logger.info(() -> JvmUtilities.objectTotalSize(s1));
 
         logger.info(() -> JvmUtilities.jvmInfo());
-//        boolean b1 = true;
-//        boolean b11=false;
-//        logger.info(() -> JvmUtilities.objectFootprint(b1));
-//        logger.info(() -> JvmUtilities.objectFootprint(b11));
 
     }
 }
