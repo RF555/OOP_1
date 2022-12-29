@@ -66,9 +66,7 @@ public class GroupAdmin implements Sender {
     @Override
     public void insert(int offset, String obj) {
         USB.insert(offset, obj);
-        for (Member member : members) {
-            member.update(USB);
-        }
+        updateAll();
     }
 
     /**
@@ -81,9 +79,7 @@ public class GroupAdmin implements Sender {
     @Override
     public void append(String obj) {
         USB.append(obj);
-        for (Member member : members) {
-            member.update(USB);
-        }
+        updateAll();
     }
 
     /**
@@ -96,9 +92,7 @@ public class GroupAdmin implements Sender {
     @Override
     public void delete(int start, int end) {
         USB.delete(start, end);
-        for (Member member : members) {
-            member.update(USB);
-        }
+        updateAll();
     }
 
     /**
@@ -108,15 +102,11 @@ public class GroupAdmin implements Sender {
     @Override
     public void undo() {
         USB.undo();
-        for (Member member : members) {
-            member.update(USB);
-        }
-
-
+        updateAll();
     }
 
     /**
-     * @return: members list
+     * @return A list of all members.
      */
     public ArrayList<Member> getMembers() {
         return members;
@@ -129,6 +119,9 @@ public class GroupAdmin implements Sender {
         return USB;
     }
 
+    /**
+     * @return Last Member to join.
+     */
     public Member getLast() {
         if (!this.members.isEmpty()) {
             return this.members.get(count - 1);
@@ -137,10 +130,14 @@ public class GroupAdmin implements Sender {
         }
     }
 
+    private void updateAll(){
+        for (Member member : members) {
+            member.update(USB);
+        }
+    }
+
     /**
-     * A toString method
-     *
-     * @return
+     * @return String representation of the object.
      */
     @Override
     public String toString() {

@@ -17,6 +17,8 @@ public class ConcreteMember implements Member {
     }
 
     /**
+     * Updates the StringBuilder.
+     *
      * @param usb
      */
     @Override
