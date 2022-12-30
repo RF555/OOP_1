@@ -3,8 +3,8 @@ package observer;
 import java.util.ArrayList;
 
 public class GroupAdmin implements Sender {
-    ArrayList<Member> members = new ArrayList<Member>();
-    UndoableStringBuilder USB = new UndoableStringBuilder();
+    public ArrayList<Member> members = new ArrayList<Member>();
+    public UndoableStringBuilder USB = new UndoableStringBuilder();
     int count = 0;
 
     /**
